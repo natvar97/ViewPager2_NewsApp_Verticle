@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         newsViewModel.getAllTopHeadlines().observe(this){ newsEntity ->
             viewPager.adapter = ViewPagerAdapter(newsEntity.articles as ArrayList<ArticlesItem>)
             viewPager.orientation = ViewPager2.ORIENTATION_VERTICAL
+            viewPager.setPageTransformer(ZoomAnimationViewPager2())
         }
 
     }
